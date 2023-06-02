@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Tajawal);
+
+body{
+   direction : ltr; 
+   background: #ffffff!important; 
+ font-family:'tajawal'!important;
+
+}
+:root{
+  --color1:#242424;
+  --color2:#323232;
+  --color3:#fd7e15;
+
+}
+.address{
+  text-align: center;
+  color: var(--color1);
+  font-weight: bolder;
+}
+.main-content{
+  width:90%!important;
+  padding-left:20px!important;
+  padding-right:20px!important; 
+  background: #ffffff;
+  padding-top:100px;
+  margin:auto;
+}
+.thead_dark {
+    background: var(--color1);
+    color:white;
+}
+.btn-download {
+    background:  var(--color3)!important;
+    border-radius: 50%!important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    vertical-align: top!important;
+    padding: 5px;
+    border: none;
+    color: white;
+  
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0px !important;
+    white-space: nowrap;
+    color:  var(--color3)!important;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+    top: 9px;
+    left: 4px;
+    height: 14px;
+    width: 14px;
+    display: block;
+    position: absolute;
+    color: white;
+    border: 2px solid white;
+    border-radius: 14px;
+    box-shadow: 0 0 3px #444;
+    box-sizing: content-box;
+    text-align: center;
+    text-indent: 0 !important;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 14px;
+    content: '+';
+    background-color:  var(--color3);
+}
+
+.table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
+    content: '-';
+    background-color: #d33333;
+}
+
+ .page-item.active .page-link {
+    z-index: 1;
+    color: var(--color3)!important;
+    background-color:  var(--color1)!important;
+    border-color:  var(--color1)!important;
+    border-radius: 8px!important;
+    
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color:  var(--color3)!important;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+
+}
+.dataTables_info, .dataTables_length{
+      float: left;
+}
+#files_list_paginate,.dataTables_filter{
+  float: right;
+}

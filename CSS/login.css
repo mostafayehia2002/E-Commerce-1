@@ -1,0 +1,64 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+.login{
+    width:300px;
+    margin: 150px auto;
+    padding-bottom: 30px;
+    border:2px solid black;
+    border-radius: 5px;
+    
+}
+.login .header{
+    padding:30px 5px;
+    text-align: center;
+
+}
+/* .admin-login{
+height: 98%;
+width: 100%;
+} */
+.username,
+.password,
+.forget-password,
+.submit{
+  width:90%;
+    position: relative;
+    margin:18px auto;
+}
+.username i,
+.password i{
+    position: absolute;
+    top:25px;
+    left:5px;
+    padding: 2px;
+
+
+
+}
+input{
+    height:35px;
+    width:100%;
+    padding-left: 30px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+input[type="submit"]{
+    color:white;
+    background-color: black;
+    text-align: center;
+padding-left: 0px;
+}
+
+.forget-password a{
+text-decoration: none;
+color:rgb(69, 69, 69);
+}
+.error{
+line-height: 0px;
+color:red;
+}
