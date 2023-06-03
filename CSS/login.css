@@ -35,8 +35,6 @@ width: 100%;
     left:5px;
     padding: 2px;
 
-
-
 }
 input{
     height:35px;
@@ -45,6 +43,7 @@ input{
     outline: none;
     border: none;
     border-bottom: 2px solid black;
+    background-color: #eee;
 }
 
 input[type="submit"]{

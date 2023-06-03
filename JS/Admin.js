@@ -28,3 +28,10 @@ if (inputUpload) {
         };
     };
 }
+/*****/
+let message=document.querySelector(".massage");
+if(message){
+    setTimeout(()=>{
+message.style.display="none";
+    },3000);
+}

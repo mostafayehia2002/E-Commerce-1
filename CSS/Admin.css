@@ -5,8 +5,8 @@
 }
 
 body {
-    direction: ltr;
-    background-color:#ffffff;
+    direction: ltr !important;
+    background-color:#ffffff !important;
 }
 
 :root {
@@ -15,8 +15,8 @@ body {
     --main-color: #242424;
     --font-color:#323232;
     --background:#ffffff;
-    --header-size: 30px;
-    --text-size: 16px;
+    --header-size: 25px;
+    --text-size: 14px;
     --icon-size: 16px;
     --border-redius: 5px;
     --padding-size: 10px;
@@ -25,22 +25,22 @@ body {
 
 /*style of links*/
 a {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
+    color:var(--font-color);
+    font-size: 15px !important;
+    text-decoration: none !important;
 }
-
+a:hover{
+    color:var(--color) !important;
+    text-decoration: none !important;
+}
 i {
-    font-size: 16px;
-    text-align: center;
-    padding: 10px;
-
+    font-size: 16px !important;
+   padding-right: 10px !important;
 }
 
 ul {
-    list-style: none;
-    text-transform: capitalize;
+    list-style: none !important;
+    text-transform: capitalize !important;
 }
 
 /*start dashboard style*/
@@ -55,7 +55,7 @@ ul {
     left: 0px;
     top: 0px;
     z-index: 1000;
-    background-color: white;
+    background-color: var(--background);
 }
 .Dashboard.hidden {
     left: -250px;
@@ -75,31 +75,52 @@ ul {
     padding-left: 0px;
 }
 
-.setting {
-    position: absolute;
-    right: -40px;
-    padding: 5px;
+.page-navbar{
+height: 80px;
+width:100%;
+display: flex;
+justify-content:space-between;
+flex-wrap: nowrap;
+align-items: center;
+}
+.page-address,
+.notification{ 
+ padding: 20px;
+ line-height: 10px;
+} 
+
+.page-address h3{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.fa-message,
+.fa-bell
+{
+    padding:10px;
+    border-radius: 5px;
+    border:2px solid #eee;
+}
+.setting{
+    color:white;
+    padding: 10px;
     text-align: center;
-    background-color: white;
-    cursor: pointer;
-    border-radius: 0px 0px 10px 0px;
-    color:var(--color);
+background-color: #242424;
+border-radius: 5px;
 }
-.page-address{
-padding:0px;
-margin-left: 40px;
+.setting:hover{
+    color:#fd7e15;
 }
+
 /*logo style*/
 .logo {
-  
-  padding-top: 10px;
+  padding-top: 20px;
     text-align: center;
     font-size: 20px;
     font-weight: bolder;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
-.logo i {
-    font-size: 20px;
+.logo i{
+    font-size: 20px !important;
 }
 
 /*links style*/
@@ -111,7 +132,7 @@ margin-left: 40px;
 
 .links li {
     display: inline-block;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -150,8 +171,7 @@ margin-left: 40px;
     color: black;
     font-weight: bold;
 }
-
-.user-name .email a {
+.user-name .phone a {
     padding: 5px;
     font-size: 16px;
     color: rgb(119, 118, 118);
@@ -162,29 +182,43 @@ margin-left: 40px;
     padding: 10px;
     margin-top: 5px;
 }
-
-.logout i {
+.logout .fa-right-from-bracket,
+.logout .fa-gear {
+    padding:10px;
     border: #dedddd solid 2px;
-    border-radius: 8px;
+    border-radius: 5px;
     margin-left: 3px;
     cursor: pointer;
 }
-
 /*end style of user*/
 @media (max-width:991px) {
     .container1 {
         padding-left: 0px;
     }
-
     .Dashboard {
         width: 230px;
         left: -230px;
     }
-
     .Dashboard.hidden {
         left: 0px;
     }
-
+  
+    .page-navbar{
+        width: 100%;
+    }
+    .page-address{
+         white-space: nowrap;
+        line-height: 20px;
+       font-size: 16px;
+    }
+    .page-address h3{
+        font-size: 18px;
+    }
+    .notification{
+        padding-left: 10px;
+        white-space: nowrap;
+        width: 70%;
+    }
 }
 
 /*************** add user*****************/
@@ -194,37 +228,35 @@ margin-left: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:space-evenly;
     align-items: center;
 
 }
-
 .input-field {
-    width: 45%;
+    width: 50%;
     padding: 20px 20px;
 }
 
 .input-field label{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color:var(--main-color);
 }
 .input-field input {
     width: 100%;
-    height: 35px;
+    height: 40px;
     border: none;
     outline: none;
     margin-top: 10px;
-    background-color:var(--font-color);
-    color:white;
-    border-radius: 5px;
+     background-color:#eee; 
+    border-bottom: 2px solid var(--main-color);
+ 
 }
-
 .file {
-    width: 45%;
-   
+    width: 100%;  
 }
 .file #userPhoto{
+    border: none;
     background-color: white;
 }
 .photo {
@@ -233,61 +265,70 @@ margin-left: 40px;
     border-radius: 30px;
 }
 
-.photo.show {
+.photo.show{
     display: block;
 }
 
 .submit {
-    width: 90%;
-    margin-top: 30px;
-    padding: 30px;
+    width: 100%;
+    margin-top: 30px;  
 }
 
 input[type="submit"] {
     width: 100px;
     border: none;
-    background-color:var(--color);
+    border-radius: 5px;
+    background-color:var(--main-color);
     color: white;
 
 }
-
-.massage {
+input[type="submit"]:hover{
+    color:var(--color);
+}
+.massage{ 
     margin-top: 20px;
     height: 35px;
-    width: 87%;
+    width:97%;
+    margin: auto;
     border-radius: 5px;
-    /* background-color: rgb(137, 204, 137); */
-    background-color:var(--color);
-    display: none;
+    color:white;
+    background-color:var(--main-color);  
+    text-align: center;
+    padding: 5px;
+}
+.massage.success{
+    background-color:#242424;
+    color:white;
+}
+.massage.faild{
+ background-color: #eee;
+ color:#fd7e15;
 
 }
+/***/
 
 @media (max-width:767px) {
     .container1 {
-        padding-top: 45px;
         width: 100%;
         padding-left: 0px;
     }
-
-    .all-fields {
+    .all-fields{
         width: 100%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        padding:10px;
     }
-
     .input-field {
-        width: 100%;
-        padding: 15px;
+        padding:10px;
+        width: 100%;  
     }
-
-    .input-field input {
+    .input-field input{
         width: 100%;
-
     }
-
     .massage {
-
         width: 95%;
     }
-
     input[type="submit"] {
         width: 100%;
         margin-left: 0px;

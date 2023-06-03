@@ -3,7 +3,7 @@ session_start();
 $id = $_SESSION['admin'];
 include("../Database/database.php");
 if (!isset($id)) {
-    header("location:login.php");
+    header("location:index.php");
     exit;
 } else {
 }
@@ -18,7 +18,7 @@ if (!isset($id)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/all.min.css">
-    <link rel="stylesheet" href="../CSS/Admin.css">
+    <link rel="stylesheet" href="../CSS/admin.css">
     <title>Home page</title>
 </head>
 
@@ -30,7 +30,7 @@ if (!isset($id)) {
 
 
     </div>
-    <script src="../JS/Admin.js"></script>   
+    <script src="../JS/admin.js"></script>   
 </body>
 
 </html>

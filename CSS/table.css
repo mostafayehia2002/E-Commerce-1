@@ -18,9 +18,9 @@ body{
   font-weight: bolder;
 }
 .main-content{
-  width:90%!important;
-  padding-left:20px!important;
-  padding-right:20px!important; 
+  width:100%;
+  padding-left:20px;
+  padding-right:20px; 
   background: #ffffff;
   padding-top:100px;
   margin:auto;
@@ -29,22 +29,12 @@ body{
     background: var(--color1);
     color:white;
 }
-.btn-download {
-    background:  var(--color3)!important;
-    border-radius: 50%!important;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    vertical-align: top!important;
-    padding: 5px;
-    border: none;
-    color: white;
-  
-}
+
 
 div.dataTables_wrapper div.dataTables_info {
-    padding-top: 0px !important;
+    padding-top: 0px ;
     white-space: nowrap;
-    color:  var(--color3)!important;
+    color:  var(--color3);
 }
 
 table.dataTable>tbody>tr.child ul.dtr-details {
@@ -84,10 +74,10 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 
  .page-item.active .page-link {
     z-index: 1;
-    color: var(--color3)!important;
-    background-color:  var(--color1)!important;
-    border-color:  var(--color1)!important;
-    border-radius: 8px!important;
+    color: var(--color3);
+    background-color:  var(--color1);
+    border-color:  var(--color1);
+    border-radius: 5px;
     
 }
 
@@ -97,7 +87,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     padding: .5rem .75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color:  var(--color3)!important;
+    color:  var(--color3);
     background-color: #fff;
     border: 1px solid #dee2e6;
 
