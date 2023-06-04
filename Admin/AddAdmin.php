@@ -12,7 +12,7 @@ if(isset($_POST['add'])){
 $username=$_POST['username'];
 $password=$_POST['password'];
 $phone=$_POST['phone'];
-$role=$_POST['role'];
+$role=empty( $_POST['role'])? 0:$_POST['role'];
 //photo
 $to="Images/".$_FILES['photo']['name'];
 $from=$_FILES['photo']['tmp_name'];
@@ -172,14 +172,12 @@ $add=$con->query("INSERT INTO `admin-login`(`UserName`,`Password`,`Number`,`Img`
             <td>
                <img src="Images/<?=$data['Img']?>" 
                height="50px" width="50px" style="border-radius:50%"> </td>
-
-            <td>
-              <button class="btn btn-sm btn-download btn-info "> 
-                <a href="AddAdmin.php?status=add&delete=<?=$data['ID']?>"
+            <td> 
+            <a href="AddAdmin.php?status=add&delete=<?=$data['ID']?>"
                 onclick="return confirm('Are you Sure Delete this user ?')">
                 <i class="fa-solid fa-user-xmark"></i>
               </a>
-              </button>
+             
             </td>
 
           </tr>

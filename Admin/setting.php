@@ -30,44 +30,36 @@ if(!isset($id)){
 </head>
 <body>
 <?php include_once("Dashboard.php"); 
+$old_img ="Images/".$data['Img'];
 if(isset($_POST['update'])){
   $username=$_POST['username'];
   $password=$_POST['password'];
   $phone=$_POST['phone'];
   $role=$_POST['role'];
-  //photo
+  //new photo
   $to="Images/".$_FILES['photo']['name'];
   $from=$_FILES['photo']['tmp_name'];
   move_uploaded_file($from,$to);
   $img=$_FILES['photo']['name'];
-  if(!empty($img)){
-  $update=$con->query("UPDATE `admin-login` SET `UserName`='$username',`Password`='$password',`Number`='$phone',`Img`='$img'  WHERE ID='$id'");
+  if(!empty($img)){ 
+   if($old_img !='Images/profile.jpg'){
+     unlink($old_img);
+      }
+  $update=$con->query("UPDATE `admin-login` SET `UserName`='$username',`Password`='$password',`Number`='$phone', `Img`='$img'  WHERE ID='$id'");
   }
   else{
     $update=$con->query("UPDATE `admin-login` SET `UserName`='$username',`Password`='$password',`Number`='$phone' WHERE ID='$id'");
  }
  header("Location:Setting.php?status=update_profile");
- exit();
+  exit();
 }
-
-
 ?>
-
 <div class="container1">
   <!-- start navbar -->
   <?php include_once("AdminNavbar.php"); ?>
 <!-- end navbar -->
 
-
-
-  <!--massage if you update your profile  -->
-  <?php 
-  if(isset($update)==true){
-    echo "<div class='massage success'>profile has been update successfully</div>";
-  } 
-  ?>
-
-  <form action="" method="POST" enctype="multipart/form-data">
+  <form  method="POST" enctype="multipart/form-data">
     <div class="all-fields">
 
     <div class="input-field file">
@@ -76,8 +68,6 @@ if(isset($_POST['update'])){
         <input type="file" id="userPhoto" name="photo" accept="image/*">
         <img src="Images/<?=$data['Img']?>" class="photo" height="200px" width="200px" Style="display:block">
       </div>
-
-
       <div class="input-field">
 
         <label for="username">User Name:</label>
