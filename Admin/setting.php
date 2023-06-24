@@ -45,10 +45,10 @@ if(isset($_POST['update'])){
    if($old_img !='Images/profile.jpg'){
      unlink($old_img);
       }
-  $update=$con->query("UPDATE `admin-login` SET `UserName`='$username',`Password`='$password',`Number`='$phone', `Img`='$img'  WHERE ID='$id'");
+  $update=$con->query("UPDATE `admin_login` SET `UserName`='$username',`Password`='$password',`Phone`='$phone', `Img`='$img'  WHERE ID='$id'");
   }
   else{
-    $update=$con->query("UPDATE `admin-login` SET `UserName`='$username',`Password`='$password',`Number`='$phone' WHERE ID='$id'");
+    $update=$con->query("UPDATE `admin_login` SET `UserName`='$username',`Password`='$password',`Phone`='$phone' WHERE ID='$id'");
  }
  header("Location:Setting.php?status=update_profile");
   exit();
@@ -82,7 +82,7 @@ if(isset($_POST['update'])){
       <div class="input-field">
         <label for="email">Phone:</label>
         <br>
-        <input type="number" id="phone" name="phone" value="<?=$data['Number']?>">
+        <input type="number" id="phone" name="phone" value="<?=$data['Phone']?>">
       </div>
 
       <div class="input-field">

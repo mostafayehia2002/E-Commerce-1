@@ -13,7 +13,7 @@ if(empty($password)){
  $error["password"]="Password is Required";
 }
 if(!empty($username) && !empty($password)){
-$sql=$con->query("SELECT * FROM `admin-login` WHERE UserName='$username' AND Password='$password'");
+$sql=$con->query("SELECT * FROM `admin_login` WHERE UserName='$username' AND Password='$password'");
 $data=$sql->fetch(PDO::FETCH_ASSOC);
 $row=$sql->rowCount();
 if($row==0){
